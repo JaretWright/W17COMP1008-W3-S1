@@ -25,6 +25,11 @@ public class W17Jan24 {
        System.out.printf("%s was born on a %s%n", tex.getFirstName(), 
                                                 tex.getDateOfBirth().getDayOfWeek());
        
+       System.out.printf("%s has an employee number of %d%n", tex, tex.getEmployeeNum());
+       
+       Employee employee2 = new Employee("Fred","Flintstone","200023441",
+                                                        LocalDate.of(1980, Month.AUGUST, 31));
+       System.out.printf("%s has an employee number of %d%n", employee2, employee2.getEmployeeNum());
        
     }
     
