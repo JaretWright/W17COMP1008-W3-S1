@@ -18,18 +18,26 @@ public class W17Jan24 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       Employee tex = new Employee("John","Rex","200023442",LocalDate.of(1999, Month.MARCH, 15));
+       HourlyEmployee tex = new HourlyEmployee("John","Rex","200023442",
+                                                LocalDate.of(1999, Month.MARCH, 15),
+                                                27.33);
        
-       System.out.println("The Employee is: " + tex.toString());
-       
+       System.out.println("The Employee is: " + tex.toString());       
        System.out.printf("%s was born on a %s%n", tex.getFirstName(), 
-                                                tex.getDateOfBirth().getDayOfWeek());
-       
+                                                tex.getDateOfBirth().getDayOfWeek());       
        System.out.printf("%s has an employee number of %d%n", tex, tex.getEmployeeNum());
        
-       Employee employee2 = new Employee("Fred","Flintstone","200023441",
-                                                        LocalDate.of(1980, Month.AUGUST, 31));
-       System.out.printf("%s has an employee number of %d%n", employee2, employee2.getEmployeeNum());
+       tex.addHoursWorked(8);
+       tex.addHoursWorked(14);
+     
+       System.out.printf("The first paycheque is: %s%n", tex.getPayCheque().toString());
+       
+       CommissionEmployee emp2 = new CommissionEmployee("Frank","Sinatra","2233",LocalDate.of(1947, 12, 12),
+                                                        45);
+       emp2.recordSales(23445);
+       emp2.recordSales(2223);
+       System.out.printf("The next paycheque is: %s%n", emp2.getPayCheque().toString());
+       
        
     }
     
