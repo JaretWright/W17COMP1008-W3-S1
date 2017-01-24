@@ -8,9 +8,11 @@ import java.time.Period;
  *
  * @author jwright
  */
-public class Employee {
+public abstract class Employee {
     private String firstName, lastName, socialInsuranceNumber;
     private LocalDate dateOfBirth;
+    private int employeeNum;
+    private static int nextEmployeeNum = 10001;
     
     public Employee(String first, String last, String sin, LocalDate dob)
     {
@@ -18,6 +20,13 @@ public class Employee {
         lastName = last;
         socialInsuranceNumber = sin;
         setBirthday(dob);
+        employeeNum = nextEmployeeNum;
+        
+        nextEmployeeNum++;  //increment so the next employee has a different number
+    }
+
+    public int getEmployeeNum() {
+        return employeeNum;
     }
     
     /**
@@ -59,5 +68,6 @@ public class Employee {
         return dateOfBirth;
     }
     
+    public abstract PayCheque getPayCheque();
     
 }
