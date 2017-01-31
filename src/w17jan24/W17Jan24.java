@@ -38,6 +38,12 @@ public class W17Jan24 {
        emp2.recordSales(2223);
        System.out.printf("The next paycheque is: %s%n", emp2.getPayCheque().toString());
        
+       BasePlusCommissionEmployee emp3 = new BasePlusCommissionEmployee("Anita","Job","1232923",
+                                                        LocalDate.of(1996, Month.MARCH, 15),
+                                                        45, 2000);
+       emp3.recordSales(23445);
+       emp3.recordSales(2223);
+       System.out.printf("The next paycheque is: %s%n", emp3.getPayCheque().toString());
        
     }
     
