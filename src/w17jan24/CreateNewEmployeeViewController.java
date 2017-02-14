@@ -52,7 +52,24 @@ public class CreateNewEmployeeViewController implements Initializable {
                                                             dobPicker.getValue(),
                                              Double.parseDouble(hourlyRateTextField.getText()));
 
-                System.out.printf("The new employee is %s%n", newEmployee);
+                System.out.printf("The new hourly employee is %s%n", newEmployee);
+            }
+            catch (IllegalArgumentException e)
+            {
+                this.errorMessageLabel.setText(e.getMessage());
+            }
+        }
+        else if (this.commissionedRadioButton.isSelected())
+        {
+            try
+            {
+                CommissionEmployee newEmployee = new CommissionEmployee(firstNameTextField.getText(),
+                                                            lastNameTextField.getText(),
+                                                            socialInsuranceNumTextField.getText(),
+                                                            dobPicker.getValue(),
+                                             Double.parseDouble(hourlyRateTextField.getText()));
+
+                System.out.printf("The new commission employee is %s%n", newEmployee);
             }
             catch (IllegalArgumentException e)
             {
