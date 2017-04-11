@@ -1,12 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package w17jan24;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -45,6 +42,18 @@ public class W17Jan24 {
        emp3.recordSales(2223);
        System.out.printf("The next paycheque is: %s%n", emp3.getPayCheque().toString());
        
+       
+       //The employees can be added to the ArrayList of Payable objects because they implement Payable
+       ArrayList<Payable> paymentObjects = new ArrayList();
+       paymentObjects.add(tex); //hourly employee
+       paymentObjects.add(emp2);    //commissioned employee
+       paymentObjects.add(emp3);    //base + commission employee
+       
+       System.out.printf("%nLooping over the Payable objects%n");
+       for (Payable payableObject : paymentObjects)
+       {
+           System.out.printf("Name: %s Class: %s%n", payableObject.toString(), payableObject.getClass());
+       }
     }
     
 }

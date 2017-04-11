@@ -51,11 +51,16 @@ public class HourlyEmployee extends Employee
     
     @Override
     public PayCheque getPayCheque() {
-        double payAmount = hoursWorked * payRate;
+        double payAmount = getPaymentAmount();
         PayCheque newPayCheque = new PayCheque(super.toString(), payAmount);
         
         hoursWorked = 0;
         return newPayCheque;
+    }
+
+    @Override
+    public double getPaymentAmount() {
+       return hoursWorked * payRate;
     }
     
 }

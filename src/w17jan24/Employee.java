@@ -8,7 +8,7 @@ import java.time.Period;
  *
  * @author jwright
  */
-public abstract class Employee {
+public abstract class Employee implements Payable{
     private String firstName, lastName, socialInsuranceNumber;
     private LocalDate dateOfBirth;
     private int employeeNum;

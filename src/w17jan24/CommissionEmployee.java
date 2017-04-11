@@ -70,5 +70,12 @@ public class CommissionEmployee extends Employee {
         return newPayCheque;
         
     }
+
+    @Override
+    public double getPaymentAmount() {
+       double amount = getCommissionAmount();
+       monthlySales =  0;
+       return amount;
+    }
     
 }

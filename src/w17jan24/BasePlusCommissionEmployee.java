@@ -42,4 +42,12 @@ public class BasePlusCommissionEmployee extends CommissionEmployee
         return newPay;
     }
     
+    public double getPaymentAmount()
+    {
+        double payAmount = super.getCommissionAmount() + baseMonthlySalary;
+        
+        super.resetMonthlySales();
+        
+        return payAmount;
+    }
 }

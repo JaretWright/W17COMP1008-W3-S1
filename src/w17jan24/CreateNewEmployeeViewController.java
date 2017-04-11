@@ -91,7 +91,8 @@ public class CreateNewEmployeeViewController implements Initializable {
         this.errorMessageLabel.setVisible(false);  //makes it invisible
         this.hourlyRadioButton.setSelected(true);
         
-        employeeTypeGroup.selectedToggleProperty().addListener(new ChangeListener<Toggle>()
+        employeeTypeGroup.selectedToggleProperty().addListener
+                        (new ChangeListener<Toggle>()
         {
             @Override
             public void changed(ObservableValue<? extends Toggle>  observable, 
